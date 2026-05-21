@@ -1,0 +1,17 @@
+[Unit]
+Description=FRP Client
+Requires=network.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=frp
+Group=frp
+WorkingDirectory=/etc/frp
+ExecStart=/usr/local/bin/frpc -c /etc/frp/frpc.toml
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
