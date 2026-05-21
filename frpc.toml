@@ -1,21 +1,23 @@
-[common]
-server_addr = "61.164.246.152"
-server_port = 7000
-#token = "your_secure_token_here"
-
-# 可选：管理接口（本地热重载）
-#web_server_addr = "127.0.0.1"
-#web_server_port = 7400
+serverAddr = "61.164.246.152"
+serverPort = 42855
 
 [[proxies]]
 name = "ssh"
 type = "tcp"
-local_ip = "127.0.0.1"
-local_port = 22
-remote_port = 6000
+localIp = "127.0.0.1"
+localPort = 22
+remotePort = 6000
+
+[[proxies]]
+name = "rdp"
+type = "tcp"
+localIp = "127.0.0.1"
+localPort = 3389
+remotePort = 7001
 
 [[proxies]]
 name = "srdp"
 type = "tcp"
-local_ip = "127.0.0.1"
-local_port = 7002
+localIp = "127.0.0.1"
+localPort = 3390
+remotePort = 7002

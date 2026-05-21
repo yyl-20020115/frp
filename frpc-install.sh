@@ -1,5 +1,6 @@
 sudo mkdir -p /etc/frp/
 sudo cp frpc.toml /etc/frp
+sudo chown root:root /etc/frp/frpc.toml
 sudo cp bin/frpc /usr/local/bin
 sudo cp frpc.service /etc/systemd/system/
 sudo chown root:root /usr/local/bin/frpc
