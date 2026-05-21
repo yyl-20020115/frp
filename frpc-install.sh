@@ -1,6 +1,6 @@
 sudo mkdir -p /etc/frp/
 sudo cp frpc.toml /etc/frp
-sudo cp frpc /usr/local/bin
+sudo cp bin/frpc /usr/local/bin
 sudo cp frpc.service /etc/systemd/system/
 sudo chown root:root /usr/local/bin/frpc
 sudo chmod 755 /usr/local/bin/frpc

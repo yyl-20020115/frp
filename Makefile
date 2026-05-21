@@ -1,5 +1,6 @@
 export PATH := $(PATH):`go env GOPATH`/bin
 export GO111MODULE=on
+
 LDFLAGS := -s -w
 NOWEB_TAG = $(shell [ ! -d web/frps/dist ] || [ ! -d web/frpc/dist ] && echo ',noweb')
 FRP_COMPAT_BASELINE_COUNT ?= 8
@@ -13,6 +14,8 @@ build: frps frpc
 
 env:
 	@go version
+	go env -w GOPROXY=https://goproxy.cn,direct
+
 
 web: frps-web frpc-web
 
